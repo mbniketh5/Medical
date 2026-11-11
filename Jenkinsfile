@@ -2,29 +2,29 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Clone') {
+        stage('Docker Login') {
             steps {
-                git 'https://github.com/mbniketh5/Medical.git'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh '''
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    '''
+                }
             }
         }
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t username/website:v1 .'
+                sh 'docker build -t mbniketh5/myapp:v1 .'
             }
         }
 
         stage('Push Image') {
             steps {
-                sh 'docker push username/website:v1'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh 'docker push mbniketh5/myapp:v1'
             }
         }
     }
