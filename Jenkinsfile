@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'pj-1',
-                    usernameVariable: 'DOCKER-USER',
+                    usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
