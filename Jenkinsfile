@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/user/website-project.git'
+                git 'https://github.com/mbniketh5/Medical.git'
             }
         }
 
