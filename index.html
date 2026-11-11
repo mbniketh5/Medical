@@ -1,1 +1,344 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PharmaCare pharmaceutical manufacturing, QC, QA and inventory dashboard.">
+    <title>PharmaCare | Pharma Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">✚</div>
+            <div>
+                <h2>PharmaCare</h2>
+                <small>PHARMA OPERATIONS</small>
+            </div>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav class="menu">
+            <a href="#dashboard" class="active">▦ <span>Dashboard</span></a>
+            <a href="#production">⚙ <span>Manufacturing</span></a>
+            <a href="#quality">🧪 <span>Quality Control</span></a>
+            <a href="#quality">✓ <span>Quality Assurance</span></a>
+            <a href="#inventory">▤ <span>Inventory</span></a>
+            <a href="#reports">▥ <span>Reports</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="user-avatar">PA</div>
+            <div>
+                <strong>Pharma Admin</strong>
+                <small>Operations Manager</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <h1>Pharma Operations Dashboard</h1>
+                <p>Manufacturing and quality management overview</p>
+            </div>
+
+            <div class="topbar-right">
+                <span class="environment">● DEMO ENVIRONMENT</span>
+                <div class="profile">PA</div>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <section class="content-section" id="dashboard">
+
+            <div class="welcome">
+                <div>
+                    <p class="eyebrow">PHARMACEUTICAL MANAGEMENT SYSTEM</p>
+                    <h2>Welcome to PharmaCare</h2>
+                    <p>Monitor production, quality, inventory and batch operations.</p>
+                </div>
+                <div class="date-box">
+                    <strong>PLANT OPERATIONS</strong>
+                    <span>Manufacturing Unit – 01</span>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <span>Total Batches</span>
+                        <span class="kpi-icon blue">▦</span>
+                    </div>
+                    <h2>128</h2>
+                    <p>Production records</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <span>In Production</span>
+                        <span class="kpi-icon orange">⚙</span>
+                    </div>
+                    <h2>18</h2>
+                    <p>Active manufacturing batches</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <span>QC Pending</span>
+                        <span class="kpi-icon purple">🧪</span>
+                    </div>
+                    <h2>09</h2>
+                    <p>Samples awaiting analysis</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-top">
+                        <span>QA Review</span>
+                        <span class="kpi-icon green">✓</span>
+                    </div>
+                    <h2>06</h2>
+                    <p>Batches awaiting review</p>
+                </div>
+            </div>
+
+            <!-- Production and Quality -->
+            <div class="dashboard-grid">
+
+                <div class="panel" id="production">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Production Overview</h3>
+                            <p>Manufacturing batch progress</p>
+                        </div>
+                        <span class="period">THIS MONTH</span>
+                    </div>
+
+                    <div class="production-stats">
+                        <div>
+                            <strong>58</strong>
+                            <span>Completed</span>
+                        </div>
+                        <div>
+                            <strong>18</strong>
+                            <span>In Progress</span>
+                        </div>
+                        <div>
+                            <strong>09</strong>
+                            <span>On Hold</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Manufacturing</span>
+                            <strong>85%</strong>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill blue-fill" style="width:85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Quality Control</span>
+                            <strong>70%</strong>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill green-fill" style="width:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>QA Review</span>
+                            <strong>60%</strong>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill purple-fill" style="width:60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" id="quality">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Quality Control Summary</h3>
+                            <p>Sample testing overview</p>
+                        </div>
+                        <span class="period">QC LAB</span>
+                    </div>
+
+                    <div class="qc-score">
+                        <div class="score-circle">
+                            <strong>96.5%</strong>
+                            <small>Illustrative</small>
+                        </div>
+                        <div>
+                            <h3>Sample Acceptance</h3>
+                            <p>Sample quality overview</p>
+                            <span class="status passed">● Within target</span>
+                        </div>
+                    </div>
+
+                    <div class="qc-details">
+                        <div><span>Passed Samples</span><strong>87</strong></div>
+                        <div><span>Pending Samples</span><strong>09</strong></div>
+                        <div><span>Under Investigation</span><strong>02</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch Table -->
+            <div class="panel batch-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>Recent Manufacturing Batches</h3>
+                        <p>Batch production and QC status</p>
+                    </div>
+                    <a href="#reports" class="view-link">View Reports →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Batch ID</th>
+                                <th>Product Name</th>
+                                <th>Batch Stage</th>
+                                <th>QC Status</th>
+                                <th>QA Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>PH-2026-001</td>
+                                <td>Paracetamol 500mg</td>
+                                <td>Manufacturing</td>
+                                <td><span class="status passed">Passed</span></td>
+                                <td><span class="status review">In Review</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>PH-2026-002</td>
+                                <td>Metformin 500mg</td>
+                                <td>QC Testing</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status pending">Waiting</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>PH-2026-003</td>
+                                <td>Amoxicillin 500mg</td>
+                                <td>QA Review</td>
+                                <td><span class="status passed">Passed</span></td>
+                                <td><span class="status review">In Review</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>PH-2026-004</td>
+                                <td>Vitamin C 500mg</td>
+                                <td>Completed</td>
+                                <td><span class="status passed">Passed</span></td>
+                                <td><span class="status released">Released</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>PH-2026-005</td>
+                                <td>Azithromycin 250mg</td>
+                                <td>Manufacturing</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status pending">Waiting</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Inventory -->
+            <div class="bottom-grid" id="inventory">
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Inventory Management</h3>
+                            <p>Raw materials and finished goods</p>
+                        </div>
+                    </div>
+
+                    <div class="inventory-row">
+                        <span>Raw Materials</span>
+                        <strong>245 Items</strong>
+                    </div>
+                    <div class="inventory-row">
+                        <span>Finished Products</span>
+                        <strong>186 Items</strong>
+                    </div>
+                    <div class="inventory-row">
+                        <span>Low Stock Alerts</span>
+                        <strong class="warning-text">08 Items</strong>
+                    </div>
+                    <div class="inventory-row">
+                        <span>Expiry Monitoring</span>
+                        <strong class="warning-text">04 Alerts</strong>
+                    </div>
+                </div>
+
+                <div class="panel" id="reports">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Operational Alerts</h3>
+                            <p>Items requiring attention</p>
+                        </div>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="alert-dot orange-dot"></span>
+                        <div>
+                            <strong>QC samples pending</strong>
+                            <p>9 samples awaiting laboratory testing</p>
+                        </div>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="alert-dot red-dot"></span>
+                        <div>
+                            <strong>Inventory review required</strong>
+                            <p>4 items approaching expiry</p>
+                        </div>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="alert-dot blue-dot"></span>
+                        <div>
+                            <strong>QA approval pending</strong>
+                            <p>6 batches awaiting review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2026 PharmaCare | Pharmaceutical Operations Platform</p>
+            <p>DevOps Demonstration Project | Sample Data Only</p>
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>
+
