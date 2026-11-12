@@ -16,15 +16,39 @@ pipeline {
             }
         }
 
-        stage('Build Image') {
+        stage('Build Dashboard') {
             steps {
-                sh 'docker build -t mbniketh5/myapp:v2 .'
+                sh 'docker build -t mbniketh5/dashboard:v3 ./dashboard'
             }
         }
 
-        stage('Push Image') {
+        stage('Build Inventory') {
             steps {
-                sh 'docker push mbniketh5/myapp:v2'
+                sh 'docker build -t mbniketh5/inventory:v3 ./inventory'
+            }
+        }
+
+        stage('Build Reports') {
+            steps {
+                sh 'docker build -t mbniketh5/reports:v3 ./reports'
+            }
+        }
+
+        stage('Push Dashboard') {
+            steps {
+                sh 'docker push mbniketh5/dashboard:v3'
+            }
+        }
+
+        stage('Push Inventory') {
+            steps {
+                sh 'docker push mbniketh5/inventory:v3'
+            }
+        }
+
+        stage('Push Reports') {
+            steps {
+                sh 'docker push mbniketh5/reports:v3'
             }
         }
     }
