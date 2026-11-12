@@ -18,13 +18,13 @@ pipeline {
 
         stage('Build Dashboard') {
             steps {
-                sh 'docker build -t mbniketh5/dashboard:v3 ./dashboard'
+                sh 'docker build -t mbniketh5/myapp:v3 ./dashboard'
             }
         }
 
         stage('Push Dashboard') {
             steps {
-                sh 'docker push mbniketh5/dashboard:v3'
+                sh 'docker push mbniketh5/myapp:v3'
             }
         }
 
