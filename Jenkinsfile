@@ -18,13 +18,13 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t mbniketh5/myapp:v1 .'
+                sh 'docker build -t mbniketh5/myapp:v2 .'
             }
         }
 
         stage('Push Image') {
             steps {
-                sh 'docker push mbniketh5/myapp:v1'
+                sh 'docker push mbniketh5/myapp:v2'
             }
         }
     }
