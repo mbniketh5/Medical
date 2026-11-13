@@ -5,6 +5,7 @@ pipeline {
         MAIN_IMAGE = 'mbniketh5/myapp-main'
         DASH_IMAGE = 'mbniketh5/myapp-dashboard'
 	INVEN_IMAGE = 'mbniketh5/myapp-inventory'
+	REPO_IMAGE = 'mbniketh5/myapp-reports'
     }
 
     stages {
@@ -73,6 +74,22 @@ pipeline {
             }
         }
 
+        stage('Build Reports Microservice') {
+            steps {
+                sh '''
+                    docker build \
+                    -t ${REPO_IMAGE}:v5 \
+                    -f reports/Dockerfile reports/
+                '''
+            }
+        }
+
+        stage('Push Reports Microservice') {
+            steps {
+                sh 'docker push ${REPO_IMAGE}:v5'
+            }
+        }
+
     }
 
     post {
@@ -84,3 +101,4 @@ pipeline {
         }
     }
 }
+         

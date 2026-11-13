@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo"> PharmaCare </div>
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Inventory</a>
+        <a href="#">Medicines</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Reports</a>
+    </nav>
+    <div class="user">Admin</div>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Inventory Management</h1>
+        <p>Monitor pharmaceutical stock, batches and expiry information.</p>
+    </div>
+    <button class="add-btn">+ Add New Medicine</button>
+</section>
+
+<section class="stats">
+
+    <div class="card">
+        <h3>Total Medicines</h3>
+        <h2>1,250</h2>
+        <p>Registered products</p>
+    </div>
+
+    <div class="card">
+        <h3>Available Stock</h3>
+        <h2>8,450</h2>
+        <p>Units in inventory</p>
+    </div>
+
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <h2>18</h2>
+        <p>Requires restocking</p>
+    </div>
+
+    <div class="card">
+        <h3>Expiring Soon</h3>
+        <h2>12</h2>
+        <p>Within 30 days</p>
+    </div>
+
+</section>
+
+<section class="inventory">
+
+    <div class="section-heading">
+        <h2>Medicine Inventory</h2>
+        <input type="text" placeholder="Search medicines...">
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Medicine ID</th>
+                    <th>Medicine Name</th>
+                    <th>Category</th>
+                    <th>Batch Number</th>
+                    <th>Stock</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>MED001</td>
+                    <td>Paracetamol 500mg</td>
+                    <td>Tablet</td>
+                    <td>BTH1001</td>
+                    <td>2500</td>
+                    <td>12-08-2027</td>
+                    <td><span class="available">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td>MED002</td>
+                    <td>Amoxicillin 250mg</td>
+                    <td>Capsule</td>
+                    <td>BTH1002</td>
+                    <td>120</td>
+                    <td>15-03-2027</td>
+                    <td><span class="low">Low Stock</span></td>
+                </tr>
+
+                <tr>
+                    <td>MED003</td>
+                    <td>Vitamin C 500mg</td>
+                    <td>Tablet</td>
+                    <td>BTH1003</td>
+                    <td>1800</td>
+                    <td>20-12-2026</td>
+                    <td><span class="available">Available</span></td>
+                </tr>
+
+                <tr>
+                    <td>MED004</td>
+                    <td>Cough Syrup 100ml</td>
+                    <td>Syrup</td>
+                    <td>BTH1004</td>
+                    <td>45</td>
+                    <td>10-12-2026</td>
+                    <td><span class="expiry">Expiring Soon</span></td>
+                </tr>
+
+                <tr>
+                    <td>MED005</td>
+                    <td>Azithromycin 500mg</td>
+                    <td>Tablet</td>
+                    <td>BTH1005</td>
+                    <td>650</td>
+                    <td>18-09-2027</td>
+                    <td><span class="available">Available</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 PharmaCare | Inventory Microservice | DevOps Kubernetes Project</p>
+</footer>
+
+</body>
+</html>
