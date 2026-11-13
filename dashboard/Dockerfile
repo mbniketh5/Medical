@@ -1,5 +1,7 @@
 FROM nginx:latest
 
+RUN mkdir -p /usr/share/nginx/html/dashboard
+
 COPY index.html /usr/share/nginx/html/dashboard/index.html
 
 COPY style.css /usr/share/nginx/html/dashboard/style.css
