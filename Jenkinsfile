@@ -4,6 +4,7 @@ pipeline {
     environment {
         MAIN_IMAGE = 'mbniketh5/myapp-main'
         DASH_IMAGE = 'mbniketh5/myapp-dashboard'
+	INVEN_IMAGE = 'mbniketh5/myapp-inventory'
     }
 
     stages {
@@ -28,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     docker build \
-                    -t ${MAIN_IMAGE}:v4 \
+                    -t ${MAIN_IMAGE}:v5 \
                     -f Dockerfile .
                 '''
             }
@@ -36,7 +37,7 @@ pipeline {
 
         stage('Push Main Website') {
             steps {
-                sh 'docker push ${MAIN_IMAGE}:v4'
+                sh 'docker push ${MAIN_IMAGE}:v5'
             }
         }
 
@@ -44,7 +45,7 @@ pipeline {
             steps {
                 sh '''
                     docker build \
-                    -t ${DASH_IMAGE}:v4 \
+                    -t ${DASH_IMAGE}:v5 \
                     -f dashboard/Dockerfile dashboard/
                 '''
             }
@@ -52,9 +53,26 @@ pipeline {
 
         stage('Push Dashboard Microservice') {
             steps {
-                sh 'docker push ${DASH_IMAGE}:v4'
+                sh 'docker push ${DASH_IMAGE}:v5'
             }
         }
+
+        stage('Build Inventory Microservice') {
+            steps {
+                sh '''
+                    docker build \
+                    -t ${INVEN_IMAGE}:v4 \
+                    -f inventory/Dockerfile inventory/
+                '''
+            }
+        }
+
+        stage('Push Inventory Microservice') {
+            steps {
+                sh 'docker push ${INVEN_IMAGE}:v5'
+            }
+        }
+
     }
 
     post {
