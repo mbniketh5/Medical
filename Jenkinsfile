@@ -61,7 +61,7 @@ pipeline {
             steps {
                 sh '''
                     docker build \
-                    -t ${INVEN_IMAGE}:v4 \
+                    -t ${INVEN_IMAGE}:v5 \
                     -f inventory/Dockerfile inventory/
                 '''
             }
